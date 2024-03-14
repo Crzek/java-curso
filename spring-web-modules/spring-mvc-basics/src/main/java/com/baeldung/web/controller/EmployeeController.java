@@ -33,7 +33,7 @@ public class EmployeeController {
         return new ModelAndView("employeeHome", "employee", new Employee());
     }
 
-    @RequestMapping(value = "/employee/{Id}", produces = { "application/json", "application/xml" }, method = RequestMethod.GET)
+    @RequestMapping(value = "/employee/{Id}", produces = { "application/json", "application/xml"}, method = RequestMethod.GET)
     public @ResponseBody Employee getEmployeeById(@PathVariable final Long Id) {
         return employeeMap.get(Id);
     }
@@ -43,11 +43,14 @@ public class EmployeeController {
         if (result.hasErrors()) {
             return "error";
         }
+        // envia attributos a jsp
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("workingArea", employee.getWorkingArea());
         model.addAttribute("id", employee.getId());
 
+
+        // agraga en al map key= id => value=employee
         employeeMap.put(employee.getId(), employee);
 
         return "employeeView";
