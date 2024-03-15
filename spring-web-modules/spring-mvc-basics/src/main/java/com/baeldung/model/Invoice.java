@@ -10,6 +10,7 @@ public class Invoice {
     private float percent;
     private Date dateInvoice;
 
+    public Invoice(){}
     public Invoice(String concept, long value,float percent,Date dateInvoice){
         this.concept = concept;
         this.value =value;
