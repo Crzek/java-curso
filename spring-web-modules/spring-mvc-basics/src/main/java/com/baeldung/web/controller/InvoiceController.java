@@ -12,6 +12,11 @@ public class InvoiceController {
 
     @RequestMapping(value = "/invoice", method = RequestMethod.GET)
     public ModelAndView showForm(){
-        return  new ModelAndView("invoice","invoice", new Invoice());
+        return new ModelAndView(
+                    "invoiceForm.jsp",
+                    "invoice",
+                    new Invoice());
+
     }
+
 }

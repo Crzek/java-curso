@@ -30,7 +30,10 @@ public class EmployeeController {
 
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public ModelAndView showForm() {
-        return new ModelAndView("employeeHome", "employee", new Employee());
+        return new ModelAndView(
+                "employee",
+                "employee",
+                new Employee());
     }
 
     @RequestMapping(value = "/employee/{Id}", produces = { "application/json", "application/xml"}, method = RequestMethod.GET)

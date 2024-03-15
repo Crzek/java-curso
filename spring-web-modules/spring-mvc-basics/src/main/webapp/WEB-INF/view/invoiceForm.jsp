@@ -10,7 +10,10 @@
 <body>
 	<h3>Welcome, Enter The Employee Details</h3>
 
-	<form:form method="POST" action="/spring-mvc-basics/invoiceResult" modelAttribute="invoice">
+	<form:form class=""
+	           method="POST"
+	           action="/spring-mvc-basics/invoiceResult"
+	           modelAttribute="invoice">
 		<table>
 			<tr>
 				<td><form:label path="concept">Name</form:label></td>
