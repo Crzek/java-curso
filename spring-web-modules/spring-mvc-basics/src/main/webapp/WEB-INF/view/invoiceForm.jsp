@@ -5,30 +5,49 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Form Example - Register an Employee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <Style>
+        body {
+            margin:1em
+        }
+        .error {
+            color: red;
+        }
+    </Style>
 
 </head>
 <body>
 	<h3>Welcome, Enter The Employee Details</h3>
 
-	<form:form class=""
+    <a href="/spring-mvc-basics/invoiceList">Lista de Facturas</a>
+
+	<form:form cssclass=""
 	           method="POST"
 	           action="/spring-mvc-basics/invoiceResult"
 	           modelAttribute="invoice">
 		<table>
 			<tr>
-				<td><form:label path="concept">Name</form:label></td>
+				<td><form:label path="concept">Concepto</form:label></td>
 				<td><form:input path="concept" /></td>
+				<td><form:errors path="concept" class="error"/></td>
 			</tr>
 			<tr>
-				<td><form:label path="value">Id</form:label></td>
+				<td><form:label path="value">Importe</form:label></td>
 				<td><form:input path="value" /></td>
+				<td><form:errors path="value" class="error"/></td>
 			</tr>
 			<tr>
-				<td><form:label path="contactNumber">Contact Number</form:label></td>
-				<td><form:input path="contactNumber" /></td>
+				<td><form:label path="percent">IVA</form:label></td>
+				<td><form:input path="percent" /></td>
+				<td><form:errors path="percent" class="error"/></td>
 			</tr>
-			<tr>
-				<td><input type="submit" value="Submit" /></td>
+            <tr>
+                <td><form:label path="dateInvoice">Fecha</form:label></td>
+                <td><form:input type="date" path="dateInvoice" /></td>
+				<td><form:errors path="dateInvoice" class="error"/></td>
+            </tr>
+
+				<td><input type="submit" value="enviar" /></td>
 			</tr>
 		</table>
 	</form:form>

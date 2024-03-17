@@ -42,7 +42,9 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-    public String submit(@ModelAttribute("employee") final Employee employee, final BindingResult result, final ModelMap model) {
+    public String submit(@ModelAttribute("employee") final Employee employee,
+                         final BindingResult result,
+                         final ModelMap model) {
         if (result.hasErrors()) {
             return "error";
         }

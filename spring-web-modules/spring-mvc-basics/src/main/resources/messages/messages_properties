@@ -1,0 +1,12 @@
+invoice.name=Mi nombre
+invoice.title=Entry your Invoice
+invoice.subject=Concept
+invoice.value=Import
+invoice.date=Date
+invoice.percent=Tax
+
+invoice.e.subject=Entry Concept
+invoice.e.value=Entry import
+invoive.e.date=Entry Date
+invoice.e.data=Entry Data
+
