@@ -30,6 +30,9 @@
             <tr>
                 <!--Primera celda de la fila -->
                     <th>
+                        ID
+                    </th>
+                    <th>
                         Concepto
                     </th>
                     <th>
@@ -39,14 +42,29 @@
                         Fecha
                     </th>
                 </tr>
-
-
                 <tr>
                     <c:forEach var="invoice" items="${invoices}">
                         <tr>
+                            <td>${invoice.value.id}</td>
                             <td>${invoice.value.concept}</td>
                             <td>${invoice.value.value}</td>
                             <td>${invoice.value.dateInvoice}</td>
+                            <td>
+                            <form:form  method="POST"
+                                        action="/spring-mvc-basics/invoiceUpdate/${invoice.value.id}"
+                                        modelAttribute="invoice">
+                                        <input type="submit" value="Editar"/>
+                            </form:form>
+                            </td>
+
+                            <td>
+                            <form:form  method="POST"
+                                        action="/spring-mvc-basics/invoiceDelete/${invoice.value.id}"
+                                        modelAttribute="invoice">
+                                        <input type="submit" value="Eliminar"/>
+                            </form:form>
+                            </td>
+
                         </tr>
                     </c:forEach>
                 </tr>
